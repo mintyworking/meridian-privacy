@@ -302,9 +302,9 @@
       <p>Namaz vakitleri ve kıble yönü, bulunduğunuz coğrafi konuma göre hesaplanır.</p>
       <ul>
         <li>Konum izni verdiğinizde, cihazınızın GPS/ağ konumu <strong>yalnızca cihazınızın belleğinde</strong> ve hesaplama anında kullanılır.</li>
-        <li>Konumunuz uygulama tarafından hiçbir sunucuya gönderilmez.</li>
+        <li>Meridian konumunuzu kendi sunucularına ya da herhangi bir üçüncü tarafa göndermez; uygulamanın sunucusu yoktur. Tek istisna, aşağıda anlatılan işletim sistemi adres çözümleme servisidir.</li>
         <li>Konum izni vermek istemezseniz, Ayarlar ekranından ülke, il ve ilçenizi elle seçerek uygulamayı izin vermeden de tam olarak kullanabilirsiniz.</li>
-        <li>Konumunuza karşılık gelen yer adını (örneğin “Kadıköy, İstanbul”) göstermek için cihazınızın işletim sistemine ait adres çözümleme servisi kullanılır. Bu servis Android'in kendi bileşenidir, Meridian'ın kontrolünde değildir ve işletim sisteminizin gizlilik ayarlarına tabidir.</li>
+        <li>Konumunuza karşılık gelen yer adını (örneğin “Kadıköy, İstanbul”) göstermek için cihazınızın işletim sistemine ait adres çözümleme servisi kullanılır. Uygulama koordinatlarınızı bu servise verir; servis bunu çoğu cihazda çevrimiçi çözümler; yani koordinatlarınız bu sırada Android'in sağlayıcısına ulaşır. Meridian sonucu yalnızca ekrandaki yer adını yazmak için kullanır, hiçbir yere kaydetmez ve göndermez. Bu servis Android'in kendi bileşenidir, Meridian'ın kontrolünde değildir ve işletim sisteminizin gizlilik ayarlarına tabidir. Konumu elle seçerseniz bu istek hiç yapılmaz.</li>
       </ul>
 
       <h3>Kur'an kayıtları</h3>
@@ -400,9 +400,9 @@
       <p>Prayer times and qibla direction are calculated from your geographic location.</p>
       <ul>
         <li>When you grant location permission, your device's GPS/network location is used <strong>only in memory on your device</strong>, at the moment of calculation.</li>
-        <li>Your location is never transmitted to any server by the app.</li>
+        <li>Meridian sends your location to no server of its own and to no third party; the app has no server. The single exception is the operating system's address-resolution service described below.</li>
         <li>If you prefer not to grant location permission, you can pick your country, province and district manually in Settings and use the app fully without it.</li>
-        <li>To display a readable place name (for example “Kadıköy, İstanbul”) the app uses your operating system's own address-resolution service. That service is an Android component outside Meridian's control and is governed by your OS privacy settings.</li>
+        <li>To display a readable place name (for example “Kadıköy, İstanbul”) the app uses your operating system's own address-resolution service. The app hands your coordinates to that service, which on most devices resolves them online — so your coordinates reach Android's provider at that moment. Meridian uses the answer only to print the place name on screen; it stores and sends nothing. The service is an Android component outside Meridian's control and is governed by your OS privacy settings. If you pick your location manually, the request is never made.</li>
       </ul>
 
       <h3>Qur'an recitations</h3>
