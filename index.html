@@ -1,0 +1,510 @@
+<title>Meridian Gizlilik Politikası</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --ground: #FBF9FC;
+    --surface: #FFFFFF;
+    --surface-sunk: #F4EFF6;
+    --ink: #241B28;
+    --ink-soft: #5F5167;
+    --ink-faint: #8B7D93;
+    --rule: #E4DBE8;
+    --brand: #5C3A66;
+    --brand-ink: #FFFFFF;
+    --gold: #8F6415;
+    --shadow: 0 1px 2px rgba(36, 27, 40, .05);
+
+    --display: "Spectral", Georgia, "Times New Roman", serif;
+    --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #15101A;
+      --surface: #1E1724;
+      --surface-sunk: #261D2D;
+      --ink: #F0E9F3;
+      --ink-soft: #B6A8BE;
+      --ink-faint: #8B7D93;
+      --rule: #342A3C;
+      --brand: #6E4779;
+      --brand-ink: #FBF6FD;
+      --gold: #D9A53B;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .3);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground: #15101A;
+    --surface: #1E1724;
+    --surface-sunk: #261D2D;
+    --ink: #F0E9F3;
+    --ink-soft: #B6A8BE;
+    --ink-faint: #8B7D93;
+    --rule: #342A3C;
+    --brand: #6E4779;
+    --brand-ink: #FBF6FD;
+    --gold: #D9A53B;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding-inline: 20px;
+    padding-block: 0 72px;
+  }
+
+  /* ---------- masthead ---------- */
+
+  .masthead {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-block: 28px 26px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .glyph { flex: none; width: 38px; height: 38px; }
+
+  .masthead-text { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+
+  .app-name {
+    font-family: var(--display);
+    font-size: 1.22rem;
+    font-weight: 600;
+    letter-spacing: -.01em;
+  }
+
+  .app-kind {
+    font-size: .8rem;
+    color: var(--ink-faint);
+  }
+
+  .lang-switch {
+    margin-left: auto;
+    display: flex;
+    gap: 2px;
+    padding: 3px;
+    background: var(--surface-sunk);
+    border-radius: 999px;
+  }
+
+  .lang-switch button {
+    font: 500 .78rem/1 var(--body);
+    letter-spacing: .04em;
+    color: var(--ink-soft);
+    background: none;
+    border: 0;
+    border-radius: 999px;
+    padding: 7px 13px;
+    cursor: pointer;
+  }
+
+  .lang-switch button[aria-pressed="true"] {
+    background: var(--surface);
+    color: var(--ink);
+    box-shadow: var(--shadow);
+  }
+
+  .lang-switch button:focus-visible,
+  a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+  /* ---------- document head ---------- */
+
+  h1 {
+    font-family: var(--display);
+    font-size: clamp(2rem, 6vw, 2.7rem);
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: -.02em;
+    text-wrap: balance;
+    margin: 44px 0 0;
+  }
+
+  .updated {
+    margin-top: 12px;
+    font-family: var(--mono);
+    font-size: .76rem;
+    letter-spacing: .02em;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+  }
+
+  /* ---------- the one bold block ---------- */
+
+  .headline {
+    margin-top: 32px;
+    padding: 26px 28px;
+    border-radius: 14px;
+    background: var(--brand);
+    color: var(--brand-ink);
+  }
+
+  .headline p { margin: 0; font-size: 1.06rem; line-height: 1.6; }
+  .headline strong { font-weight: 600; }
+  .headline p + p { margin-top: 12px; color: color-mix(in srgb, var(--brand-ink) 82%, transparent); font-size: .95rem; }
+
+  /* ---------- sections ---------- */
+
+  section { margin-top: 44px; }
+
+  h2 {
+    font-family: var(--display);
+    font-size: 1.42rem;
+    font-weight: 600;
+    letter-spacing: -.01em;
+    margin: 0 0 4px;
+    text-wrap: balance;
+  }
+
+  h3 {
+    font-size: .96rem;
+    font-weight: 600;
+    margin: 26px 0 2px;
+    color: var(--ink);
+  }
+
+  p { margin: 12px 0; }
+
+  ul { margin: 12px 0; padding-left: 1.15rem; }
+  li { margin: 7px 0; }
+  li::marker { color: var(--gold); }
+
+  strong { font-weight: 600; }
+
+  /* ---------- permissions table ---------- */
+
+  .table-scroll { overflow-x: auto; margin-top: 16px; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .9rem;
+    min-width: 30rem;
+  }
+
+  th {
+    text-align: left;
+    font-size: .7rem;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 600;
+    padding: 0 14px 9px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  td {
+    padding: 13px 14px 13px 0;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+    color: var(--ink-soft);
+  }
+
+  td:first-child { color: var(--ink); width: 42%; }
+  tr:last-child td { border-bottom: 0; }
+
+  code {
+    font-family: var(--mono);
+    font-size: .78em;
+    color: var(--gold);
+    background: var(--surface-sunk);
+    padding: 2px 6px;
+    border-radius: 5px;
+    white-space: nowrap;
+  }
+
+  .perm-name { display: block; font-weight: 500; margin-bottom: 4px; }
+
+  /* ---------- contact ---------- */
+
+  .contact {
+    margin-top: 48px;
+    padding: 22px 24px;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+  }
+
+  .contact p { margin: 0; }
+  .contact p + p { margin-top: 8px; color: var(--ink-soft); font-size: .92rem; }
+
+  a { color: var(--gold); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+
+  footer {
+    margin-top: 40px;
+    padding-top: 22px;
+    border-top: 1px solid var(--rule);
+    font-size: .82rem;
+    color: var(--ink-faint);
+  }
+
+  [hidden] { display: none !important; }
+
+  @media (max-width: 30rem) {
+    .masthead { flex-wrap: wrap; }
+    .lang-switch { margin-left: 0; width: 100%; justify-content: center; }
+    .headline { padding: 22px 20px; }
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <svg class="glyph" viewBox="0 0 64 64" aria-hidden="true" fill="none">
+      <circle cx="30" cy="34" r="23" stroke="#D9A53B" stroke-width="2.6"/>
+      <ellipse cx="30" cy="34" rx="9.5" ry="23" stroke="#D9A53B" stroke-width="2.6"/>
+      <path d="M52 18.5a8.2 8.2 0 1 1-8.6-8.2 9.8 9.8 0 0 0 8.6 8.2Z" fill="#D9A53B"/>
+    </svg>
+    <div class="masthead-text">
+      <span class="app-name">Meridian</span>
+      <span class="app-kind" data-tr="Namaz vakitleri · Kıble · Tesbihat" data-en="Prayer times · Qibla · Dhikr">Namaz vakitleri · Kıble · Tesbihat</span>
+    </div>
+    <div class="lang-switch" role="group" aria-label="Dil / Language">
+      <button id="btn-tr" type="button" aria-pressed="true">TÜRKÇE</button>
+      <button id="btn-en" type="button" aria-pressed="false">ENGLISH</button>
+    </div>
+  </header>
+
+  <!-- ================= TÜRKÇE ================= -->
+  <main id="doc-tr" lang="tr">
+
+    <h1>Gizlilik Politikası</h1>
+    <p class="updated">Son güncelleme: 22 Eylül 2026</p>
+
+    <div class="headline">
+      <p><strong>Meridian hiçbir kişisel veriyi toplamaz</strong>, hiçbir sunucuya göndermez, satmaz veya üçüncü taraflarla paylaşmaz.</p>
+      <p>Uygulamanın kendi sunucusu yoktur. Hesap açmanızı istemez, reklam göstermez, analiz veya izleme aracı içermez. Namaz vakitleri, kıble yönü ve Kur'an metni cihazınızda, çevrimdışı çalışır.</p>
+      <p>Tek istisna Kur'an kayıtlarıdır: bir kâriyi dinlediğinizde veya indirdiğinizde ses dosyası quran.com'un sunucularından alınır. Ayrıntısı aşağıda.</p>
+    </div>
+
+    <section>
+      <h2>İşlenen veriler</h2>
+
+      <h3>Konum bilgisi</h3>
+      <p>Namaz vakitleri ve kıble yönü, bulunduğunuz coğrafi konuma göre hesaplanır.</p>
+      <ul>
+        <li>Konum izni verdiğinizde, cihazınızın GPS/ağ konumu <strong>yalnızca cihazınızın belleğinde</strong> ve hesaplama anında kullanılır.</li>
+        <li>Konumunuz uygulama tarafından hiçbir sunucuya gönderilmez.</li>
+        <li>Konum izni vermek istemezseniz, Ayarlar ekranından ülke, il ve ilçenizi elle seçerek uygulamayı izin vermeden de tam olarak kullanabilirsiniz.</li>
+        <li>Konumunuza karşılık gelen yer adını (örneğin “Kadıköy, İstanbul”) göstermek için cihazınızın işletim sistemine ait adres çözümleme servisi kullanılır. Bu servis Android'in kendi bileşenidir, Meridian'ın kontrolünde değildir ve işletim sisteminizin gizlilik ayarlarına tabidir.</li>
+      </ul>
+
+      <h3>Kur'an kayıtları</h3>
+      <p>Bir sureyi dinlediğinizde veya çevrimdışı kullanmak için indirdiğinizde, uygulama ses dosyasını <strong>quran.com</strong> üzerinden ister. Her internet isteğinde olduğu gibi bu istek IP adresinizi karşı sunucuya taşır; uygulama bunun dışında hiçbir bilgi göndermez — kimlik, hesap, cihaz kimliği veya konum gönderilmez.</p>
+      <p>İndirilen kayıtlar yalnızca cihazınızda saklanır ve Ayarlar &rsaquo; Okuma &rsaquo; İndirilenler ekranından silinebilir. Hiç dinlemezseniz uygulama bu isteği hiç yapmaz.</p>
+      <p>Kur'an metni, meal, hadis külliyatı ve tecvid verileri uygulamanın içinde gelir; bunlar için hiçbir ağ isteği yapılmaz.</p>
+
+      <h3>Cihazınızda saklanan ayarlar</h3>
+      <p>Seçtiğiniz dil, tema, hesaplama yöntemi, bildirim tercihleri, tesbihat kayıtlarınız ve elle seçtiğiniz konum <strong>yalnızca cihazınızın kendi depolama alanında</strong> saklanır. Uygulama silindiğinde bu veriler de silinir ve cihazınızın kendi sistem yedeklemesi dışında hiçbir yere yedeklenmez.</p>
+
+      <h3>Toplanmayan veriler</h3>
+      <p>Uygulama; adınızı, e-posta adresinizi, telefon numaranızı, rehberinizi, fotoğraflarınızı, cihaz kimliğinizi, reklam kimliğinizi veya kullanım istatistiklerinizi <strong>toplamaz</strong>.</p>
+    </section>
+
+    <section>
+      <h2>İzinler ve kullanım amaçları</h2>
+      <p>Tüm izinler isteğe bağlıdır ve istediğiniz zaman cihaz ayarlarınızdan geri alınabilir. Bir izni vermediğinizde yalnızca ilgili özellik devre dışı kalır, uygulamanın geri kalanı çalışmaya devam eder.</p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th scope="col">İzin</th><th scope="col">Neden gerekli</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="perm-name">Konum</span><code>ACCESS_FINE_LOCATION</code></td>
+              <td>Namaz vakitlerini ve kıble yönünü hesaplamak</td>
+            </tr>
+            <tr>
+              <td><span class="perm-name">Bildirim gönderme</span><code>POST_NOTIFICATIONS</code></td>
+              <td>Namaz vakti ve vakit öncesi hatırlatmalarını göstermek</td>
+            </tr>
+            <tr>
+              <td><span class="perm-name">Tam zamanlı alarm</span><code>SCHEDULE_EXACT_ALARM</code></td>
+              <td>Bildirimin vaktin tam dakikasında ulaşmasını sağlamak</td>
+            </tr>
+            <tr>
+              <td><span class="perm-name">Tam ekran bildirim</span><code>USE_FULL_SCREEN_INTENT</code></td>
+              <td>Yalnızca siz açarsanız: hatırlatmayı kilit ekranında tam ekran göstermek</td>
+            </tr>
+            <tr>
+              <td><span class="perm-name">Rahatsız Etmeyin erişimi</span><code>ACCESS_NOTIFICATION_POLICY</code></td>
+              <td>Yalnızca siz açarsanız: namaz süresince telefonu sessize almak</td>
+            </tr>
+            <tr>
+              <td><span class="perm-name">Titreşim</span><code>VIBRATE</code></td>
+              <td>Tesbihat sayımında ve kıble hizalandığında geri bildirim vermek</td>
+            </tr>
+            <tr>
+              <td><span class="perm-name">Yeniden başlatmada çalışma</span><code>RECEIVE_BOOT_COMPLETED</code></td>
+              <td>Cihaz kapanıp açıldığında bildirim planlamasını yeniden kurmak</td>
+            </tr>
+            <tr>
+              <td><span class="perm-name">İnternet</span><code>INTERNET</code></td>
+              <td>Kur'an kayıtlarını dinlemek ve indirmek; ayrıca işletim sisteminin adres çözümleme servisi</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Çocukların gizliliği</h2>
+      <p>Uygulama çocuklara yönelik değildir ve çocuklardan bilerek veri toplamaz.</p>
+    </section>
+
+    <section>
+      <h2>Değişiklikler</h2>
+      <p>Bu politika güncellenirse, güncel sürüm bu adreste yayımlanır ve yukarıdaki “Son güncelleme” tarihi değiştirilir.</p>
+    </section>
+
+    <div class="contact">
+      <p><strong>İletişim</strong></p>
+      <p>Soru ve talepleriniz için: <a href="mailto:trendfocuslimited@gmail.com">trendfocuslimited@gmail.com</a></p>
+    </div>
+
+  </main>
+
+  <!-- ================= ENGLISH ================= -->
+  <main id="doc-en" lang="en" hidden>
+
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: 22 September 2026</p>
+
+    <div class="headline">
+      <p><strong>Meridian collects no personal data</strong>, sends nothing to any server, and neither sells nor shares any data with third parties.</p>
+      <p>The app has no backend of its own. It requires no account, shows no advertising, and contains no analytics or tracking SDKs. Prayer times are calculated on your device, offline.</p>
+    </div>
+
+    <section>
+      <h2>Data processed</h2>
+
+      <h3>Location</h3>
+      <p>Prayer times and qibla direction are calculated from your geographic location.</p>
+      <ul>
+        <li>When you grant location permission, your device's GPS/network location is used <strong>only in memory on your device</strong>, at the moment of calculation.</li>
+        <li>Your location is never transmitted to any server by the app.</li>
+        <li>If you prefer not to grant location permission, you can pick your country, province and district manually in Settings and use the app fully without it.</li>
+        <li>To display a readable place name (for example “Kadıköy, İstanbul”) the app uses your operating system's own address-resolution service. That service is an Android component outside Meridian's control and is governed by your OS privacy settings.</li>
+      </ul>
+
+      <h3>Qur'an recitations</h3>
+      <p>When you play a sura, or download one for offline use, the app requests the audio file from <strong>quran.com</strong>. Like any web request, that carries your IP address to the receiving server; the app sends nothing else — no identity, no account, no device identifier and no location.</p>
+      <p>Downloaded recitations are stored only on your device and can be removed from Settings &rsaquo; Reading &rsaquo; Downloads. If you never listen, the app never makes the request.</p>
+      <p>The Qur'an text, translations, hadith collections and tajweed data are bundled inside the app; none of them cause a network request.</p>
+
+      <h3>Settings stored on your device</h3>
+      <p>Your language, theme, calculation method, notification preferences, dhikr records and manually chosen location are stored <strong>only in your device's own storage</strong>. They are deleted along with the app and are not backed up anywhere, other than your device's own system backup.</p>
+
+      <h3>Data not collected</h3>
+      <p>The app does <strong>not</strong> collect your name, email address, phone number, contacts, photos, device identifier, advertising ID or usage statistics.</p>
+    </section>
+
+    <section>
+      <h2>Permissions and why they are needed</h2>
+      <p>All permissions are optional and can be revoked at any time from your device settings. Denying one disables only the corresponding feature; the rest of the app keeps working.</p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th scope="col">Permission</th><th scope="col">Purpose</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="perm-name">Location</span><code>ACCESS_FINE_LOCATION</code></td>
+              <td>Calculating prayer times and qibla direction</td>
+            </tr>
+            <tr>
+              <td><span class="perm-name">Post notifications</span><code>POST_NOTIFICATIONS</code></td>
+              <td>Showing prayer-time and pre-prayer reminders</td>
+            </tr>
+            <tr>
+              <td><span class="perm-name">Exact alarm</span><code>SCHEDULE_EXACT_ALARM</code></td>
+              <td>Delivering the notification at the exact minute of the prayer time</td>
+            </tr>
+            <tr>
+              <td><span class="perm-name">Full-screen intent</span><code>USE_FULL_SCREEN_INTENT</code></td>
+              <td>Only if you enable it: showing the reminder full-screen on the lock screen</td>
+            </tr>
+            <tr>
+              <td><span class="perm-name">Do Not Disturb access</span><code>ACCESS_NOTIFICATION_POLICY</code></td>
+              <td>Only if you enable it: silencing the phone during prayer</td>
+            </tr>
+            <tr>
+              <td><span class="perm-name">Vibrate</span><code>VIBRATE</code></td>
+              <td>Feedback for the dhikr counter and qibla alignment</td>
+            </tr>
+            <tr>
+              <td><span class="perm-name">Run at startup</span><code>RECEIVE_BOOT_COMPLETED</code></td>
+              <td>Re-establishing notification schedules after a reboot</td>
+            </tr>
+            <tr>
+              <td><span class="perm-name">Internet</span><code>INTERNET</code></td>
+              <td>Playing and downloading Qur'an recitations, and the OS address-resolution service</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Children's privacy</h2>
+      <p>The app is not directed at children and does not knowingly collect data from them.</p>
+    </section>
+
+    <section>
+      <h2>Changes</h2>
+      <p>If this policy is updated, the current version is published at this address and the “Last updated” date above is changed.</p>
+    </section>
+
+    <div class="contact">
+      <p><strong>Contact</strong></p>
+      <p>For questions and requests: <a href="mailto:trendfocuslimited@gmail.com">trendfocuslimited@gmail.com</a></p>
+    </div>
+
+  </main>
+
+  <footer>
+    <span data-tr="Meridian · TrendFocus LLC" data-en="Meridian · TrendFocus LLC">Meridian · TrendFocus LLC</span>
+  </footer>
+
+</div>
+
+<script>
+  (function () {
+    var docs = { tr: document.getElementById('doc-tr'), en: document.getElementById('doc-en') };
+    var btns = { tr: document.getElementById('btn-tr'), en: document.getElementById('btn-en') };
+
+    function show(lang) {
+      var other = lang === 'tr' ? 'en' : 'tr';
+      docs[lang].hidden = false;
+      docs[other].hidden = true;
+      btns[lang].setAttribute('aria-pressed', 'true');
+      btns[other].setAttribute('aria-pressed', 'false');
+      document.documentElement.lang = lang;
+      // Chrome outside the two documents (tagline, footer) swaps with them.
+      document.querySelectorAll('[data-' + lang + ']').forEach(function (el) {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+    }
+
+    btns.tr.addEventListener('click', function () { show('tr'); });
+    btns.en.addEventListener('click', function () { show('en'); });
+  })();
+</script>
